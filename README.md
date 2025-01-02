@@ -1,0 +1,1 @@
+Just a sample with the Vitest configuration.
