@@ -5,8 +5,14 @@ import App from '../src/App'
 
 describe('App', () => {
     it('Should render App', () => {
-        const { getByTestId } = render(<App />)
+        render(<App />)
 
-        expect(getByTestId('sample')).toBeInTheDocument()
+        expect(screen.queryByTestId('sample')).toBeInTheDocument()
+    })
+
+    it('Should render not render', async () => {
+        render(<App />)
+
+        expect(screen.queryByTestId('not.found')).not.toBeInTheDocument()
     })
 }) 
